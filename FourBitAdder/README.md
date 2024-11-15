@@ -9,5 +9,6 @@ The circuit that defines it is the following.
 After simulating it with gtkwave, it was possible to see that the circuit was behaving as expected.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/68b2e58a-d0ce-42f6-951a-36e8a27506bd" width="900" />
+  <img src="https://github.com/user-attachments/assets/22ca793a-713a-4142-acbc-141293e8346d" width="900" />
 </p>
+
