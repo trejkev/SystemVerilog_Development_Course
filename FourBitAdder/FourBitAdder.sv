@@ -27,7 +27,7 @@ endmodule
 module fourBitAdder_tb;
     reg [3:0] A;
     reg [3:0] B;
-    reg [3:0] C;
+    reg [4:0] C;
 
     // Instance of the four bit adder before testing it
     fourBitAdder adder(A, B, C);
@@ -43,16 +43,16 @@ module fourBitAdder_tb;
     initial
         begin
             // TC0: No input active
-               A = 0; B = 0; // C = 0
+               A = 0; B = 0;             // C = 0
             // TC1: Only one input active
-            #5 A = 3; B = 0; // C = 3
-            #5 A = 0; B = 3; // C = 3
+            #5 A = 3; B = 0;             // C = 3
+            #5 A = 0; B = 3;             // C = 3
             // TC2: One input at max
-            #5 A = 7; B = 0; // C = 7
+            #5 A = 4'b1111; B = 0;       // C = 15
             // TC3: Both inputs with any value
-            #5 A = 3; B = 2; // C = 5
+            #5 A = 3; B = 2;             // C = 5
             // TC4: Both inputs at max
-            #5 A = 7; B = 7; // C = 14
+            #5 A = 4'b1111; B = 4'b1111; // C = 30
             #5
             $finish;
         end
