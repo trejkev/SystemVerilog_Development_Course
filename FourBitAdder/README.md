@@ -1,0 +1,1 @@
+The four bit adder is a circuit that takes two numbers of 4 bits each, adds them, and outputs the result in a third number of 5 bits.
