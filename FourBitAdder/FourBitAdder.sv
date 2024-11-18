@@ -1,26 +1,67 @@
 `timescale 1ns / 100ps // Each time step will be 1 ns, and the resolution of the simulation will be in steps of 100 ps
-module halfAdder(input wire A, B, output wire Cout, S);
+module halfAdder(
+    input A, 
+    input B,
+    output Cout, 
+    output S
+    );
+
     and(Cout, A, B);
     xor(S, A, B);
+
 endmodule
 
-module fullAdder(input wire A, B, Cin, output wire Cout, S);
-    wire Cout1;
-    wire Cout2;
-    wire S1;
-    halfAdder halfAdder1(A, B, Cout1, S1);
-    halfAdder halfAdder2(S1, Cin, Cout2, S);
+module fullAdder(
+    input A,
+    input B,
+    input Cin,
+    output Cout,
+    output S
+    );
+
+    wire Cout1, Cout2, S1;
+
+    halfAdder halfAdder1(.A(A), .B(B), .Cout(Cout1), .S(S1));
+    halfAdder halfAdder2(.A(S1), .B(Cin), .Cout(Cout2), .S(S));
     or(Cout, Cout1, Cout2);
+
 endmodule
 
-module fourBitAdder (input wire [3:0] A,
-                     input wire [3:0] B,
-                     output wire [4:0] C);
+module fourBitAdder (
+    input [3:0] A,
+    input [3:0] B,
+    output [4:0] C
+    );
+
     wire Cout0, Cout1, Cout2, Cout3;
-    halfAdder halfAdder0(A[0], B[0], Cout0, C[0]);
-    fullAdder fullAdder1(A[1], B[1], Cout0, Cout1, C[1]);
-    fullAdder fullAdder2(A[2], B[2], Cout1, Cout2, C[2]);
-    fullAdder fullAdder3(A[3], B[3], Cout2, Cout3 , C[3]);
+
+    halfAdder halfAdder0(
+        .A(A[0]),
+        .B(B[0]),
+        .Cout(Cout0),
+        .S(C[0])
+    );
+    fullAdder fullAdder1(
+        .A(A[1]),
+        .B(B[1]),
+        .Cin(Cout0),
+        .Cout(Cout1),
+        .S(C[1])
+    );
+    fullAdder fullAdder2(
+        .A(A[2]),
+        .B(B[2]),
+        .Cin(Cout1),
+        .Cout(Cout2),
+        .S(C[2])
+    );
+    fullAdder fullAdder3(
+        .A(A[3]),
+        .B(B[3]),
+        .Cin(Cout2),
+        .Cout(Cout3),
+        .S(C[3])
+    );
     assign C[4] = Cout3;
 endmodule
 
