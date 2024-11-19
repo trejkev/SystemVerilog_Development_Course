@@ -8,6 +8,7 @@ To compile with icarus Verilog use the following line:
         iverilog -g2012 -o output_file your_file.sv
 
 To run the code use the folowing line:
+        
         vvp output_file
 
 To be able to visualize the signals of your code, make sure to include in your testbench monitoring cycle the following code, where output_file_tb shall match with the module testbench name:
