@@ -1,0 +1,1 @@
+This code implements a simple multiplexor that selects between two input lanes based on input S, if S = 0 selects input b, while if S = 1 selects input a.
