@@ -16,6 +16,8 @@ To be able to visualize the signals of your code, make sure to include in your t
         $dumpfile("output_file_tb.vcd");
         $dumpvars(0, output_file_tb);
 
-Then, to visualize the signals you can use gtkwave, if using macOS, I do recommend using the binaries that https://github.com/YosysHQ/oss-cad-suite-build has, to avoid messing with libraries. And then run it by using {path to gtkwave binary}/gtkwave output_file_tb.vcd
+Then, to visualize the signals you can use gtkwave, if using macOS, I do recommend using the binaries that https://github.com/YosysHQ/oss-cad-suite-build has, to avoid messing with libraries. And then run it by using the following command:
+                
+        {path to gtkwave binary}/gtkwave output_file_tb.vcd
 
 To visualize the circuit, you can use https://digitaljs.tilk.eu/
