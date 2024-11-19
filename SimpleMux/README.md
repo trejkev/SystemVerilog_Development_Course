@@ -1,4 +1,4 @@
-This code implements a simple multiplexor that selects between two input lanes based on input S, if S = 0 selects input b, while if S = 1 selects input a.
+This code implements a simple multiplexor that selects between two input lanes based on input s, if s = 0 selects input b, while if s = 1 selects input a.
 
 The simulation obtained the following wave profile, showing that the circuit functionality is correct.
 
