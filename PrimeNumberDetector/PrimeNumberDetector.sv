@@ -47,7 +47,7 @@ module pnd_tb;
             $finish;
         end
 
-    // Update this block everytime C, B, or A change
+    // Update input_comb everytime C, B, or A change
     always @(C, B, A) begin
         input_comb = {C, B, A}; // Concatenate C, B, A to form a binary number
     end
