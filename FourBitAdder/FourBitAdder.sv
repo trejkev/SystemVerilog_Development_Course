@@ -21,8 +21,18 @@ module fullAdder(
 
     wire Cout1, Cout2, S1;
 
-    halfAdder halfAdder1(.A(A), .B(B), .Cout(Cout1), .S(S1));
-    halfAdder halfAdder2(.A(S1), .B(Cin), .Cout(Cout2), .S(S));
+    halfAdder halfAdder1(
+        .A(A),
+        .B(B),
+        .Cout(Cout1),
+        .S(S1)
+    );
+    halfAdder halfAdder2(
+        .A(S1),
+        .B(Cin),
+        .Cout(Cout2),
+        .S(S)
+    );
     or(Cout, Cout1, Cout2);
 
 endmodule
