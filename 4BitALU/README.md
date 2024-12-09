@@ -1,0 +1,1 @@
+The code listed here implements a simple 4-bit aritmetic logic unit. It only considers four operations, these are addition, multiplication, module, and bitwise AND.
